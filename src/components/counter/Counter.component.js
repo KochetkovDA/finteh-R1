@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Counter.css';
+import './Counter.component.css';
 
 export default class Counter extends Component {
   static propTypes = {
