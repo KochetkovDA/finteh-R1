@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&subset=cyrillic');
+
 body {
+  font-family: 'Roboto', sans-serif;
   background: #e1c3f8;
   background: linear-gradient(to right, #e1c3f8, #c1d6ff);
   height: 1vw;
@@ -12,4 +15,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+@media only screen and (max-width:720px){
+  .main-container {
+    margin: 40px 10px 40px 10px;
+  }
 }
