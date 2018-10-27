@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&subset=cyrillic');
 @import "../../../node_modules/font-awesome/css/font-awesome.min.css";
 
 .counter--input_group {
@@ -25,7 +24,6 @@
     outline: none;
     height:15px;
     border: none;
-
 }
 .counter--button {
     height: 35px;
