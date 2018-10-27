@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import './To-Do.component.css';
 import Task from "./subElement/Task.component";
 
@@ -69,7 +68,7 @@ export default class ToDo extends Component {
               delete={() => this.deleteTask(index)}
               editTask={(task) => this.editTask(index, task)}
               done={() => this.taskFinished(index)}
-              key={index}>
+              key={index + item.task}>
             </Task>)
           )}
         </ul>
