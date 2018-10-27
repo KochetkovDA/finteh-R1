@@ -9,14 +9,15 @@ export default class ToDo extends Component {
     this.addTask = this.addTask.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.taskFinished = this.taskFinished.bind(this);
+    this.editTask = this.editTask.bind(this);
     this.deleteTask = this.deleteTask.bind(this);
     this.state = {
       newTask: '',
-      tasksList: [ ]
+      tasksList: []
     }
   }
   addTask() {
-    if(this.state.newTask) {
+    if (this.state.newTask) {
       this.state.tasksList.push({
         task: this.state.newTask,
         state: false
@@ -28,19 +29,28 @@ export default class ToDo extends Component {
     }
   }
   handleChange(e) {
-    console.log(e.target.value)
     this.setState({ newTask: e.target.value });
   }
 
-  taskFinished(id){
+  taskFinished(id) {
     this.setState({
       tasksList: this.state.tasksList.map((element, index) => {
-          if(index === id){
-            console.log(element);
-            element.state = ! element.state;
-          }
-          return element;
-      })});
+        if (index === id) {
+          element.state = !element.state;
+        }
+        return element;
+      })
+    });
+  }
+  editTask(id, newTask) {
+    this.setState({
+      tasksList: this.state.tasksList.map((element, index) => {
+        if (index === id) {
+          element.task = newTask;
+        }
+        return element;
+      })
+    })
   }
 
   deleteTask(id) {
@@ -55,13 +65,13 @@ export default class ToDo extends Component {
       <div className="to-do--container">
         <h3>To-Do List</h3>
         <ul className="to-do--tasksBlock">
-    {this.state.tasksList.map((item,index) => { console.log(item, this.state.tasksList)
-                                          return(<Task task={item}
-                                                 delete={()=> this.deleteTask(index)}
-                                                 editTask={()=> this.editTask(index)}
-                                                 done={()=> this.taskFinished(index)}
-                                                 key={index}>
-                                          </Task>)})}
+          {this.state.tasksList.map((item, index) => (<Task task={item}
+              delete={() => this.deleteTask(index)}
+              editTask={(task) => this.editTask(index, task)}
+              done={() => this.taskFinished(index)}
+              key={index}>
+            </Task>)
+          )}
         </ul>
         <div className="to-do--input-group">
           <input onChange={this.handleChange} value={this.state.newTask} />

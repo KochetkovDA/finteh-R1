@@ -15,7 +15,7 @@
     border: 1px solid #e2e2e2;
     border-radius: 50px;
 }
-.task-doneBtn {
+.task-btn {
     height: 35px;
     width: 35px;
     margin: 0 2px 0 2px;
@@ -32,21 +32,25 @@
     text-decoration: none;
 }
 
-.task-doneBtn:hover {
+.task-btn:hover {
     background: linear-gradient(to top, #1fa2ff, #12d8fa, #a6ffcb);
     padding: 0 7px 0 7px;
     border: none;
     color: #fff;
 }
-.task-doneBtn.delete:hover {
+.task-btn.delete:hover {
     background: linear-gradient(to bottom, #ec253c, #f13417);
     border: none;
     color: #fff;
 }
-.task-doneBtn.edit:hover {
+.task-btn.edit:hover {
     background: linear-gradient(to bottom, #fdc830, #f37335);
     border: none;
     color: #fff;
+}
+.task-btn.changeBtn {
+    height: 35px;
+    min-width: 88px;
 }
 .task-done {
     background: linear-gradient(to left, #dcf5e4, #98f1ba);
